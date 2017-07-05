@@ -2,9 +2,10 @@ let webpack = require('webpack');
 let path = require('path');
 
 module.exports = {
-    entry: path.resolve(__dirname + "/app/entry.js"),
+    entry: path.resolve(__dirname + "/src/main.js"),
     output: {
-        path: path.resolve(__dirname + "/public"),
+        path: path.resolve(__dirname + "/dist/"),
+        publicPath:'dist',
         filename: 'script.js'
     },
     resolve: {

@@ -2,11 +2,8 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import VueRouter from 'vue-router'
-import App from './App.vue'
-import hello from './Hello.js'
-import index from './index.vue'
 import routes from './routes.js'
-
+import App from './App.vue'
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 

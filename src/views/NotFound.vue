@@ -4,10 +4,10 @@
 
 <script>
     module.exports = {
-        name:"Update",
+        name:"NotFound",
         data(){
             return {
-                msg:'引入Update.Vue文件'
+                msg:'引入'+ this.name + '文件'
             }
         }
     }
