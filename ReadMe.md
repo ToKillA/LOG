@@ -11,3 +11,12 @@ npm install --save-dev css-loader style-loader 用来解析css
 web-server-dev 内存 publicPath 虚拟路径
 > [webpack路径base,--content-base, publicPath](http://www.cnblogs.com/chenshao/p/6362768.html)
 
+### 2017/7/6 
+template 只能包含一个子标签 v-for :key 
+解决右边窗口滑动的问题 刚开始加了
+```js
+ <el-card style="height:100%;overflow-y:scroll">
+    ...
+ </el-card>
+ ```
+ 出现滑动条,，但是不能滑动，好像是改了哪里的flex就莫名能滑动了，但好像改的地方无关联，玄学:(

@@ -18,15 +18,10 @@ module.exports = {
 </script>
 
 <style scoped>
-body {
-    margin: 0;
-    padding: 0;
-}
+
 
 #app {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    height: 100%;
     width: 100%;
 }
 </style>

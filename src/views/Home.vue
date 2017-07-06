@@ -1,29 +1,23 @@
 <template>
     <div class="container">
-        <el-row>
-            <el-col :span="24" class="header"> </el-col>
-            <el-col :span="10" class="logo">
+        <header>
+            <span class="logo"> { LOG }</span>
+        </header>
     
-            </el-col>
-            <el-col :span="10">
-    
-            </el-col>
-            <el-col :span="4" class="userinfo">
-    
-            </el-col>
-        </el-row>
-    
-        <div class="main tac">
+        <div class="main">
             <aside>
-                <el-menu theme="dark" :default-active="activeIndex" :router=true mode="vertical">
-                    <el-menu-item index="article">Article</el-menu-item>
-                    <el-menu-item index="picture">Picture</el-menu-item>
-                    <el-menu-item index="oneNote">OneNote</el-menu-item>
+                <el-menu theme="light"  style="height:100%;" unique-opened class="el-menu-vertical-demo" 
+                :default-active="$route.path" :router=true mode="vertical">
+                    <el-submenu v-for="(item,index) in $router.options.routes" v-if="!item.hidden" :index="index+''" :key="index">
+                        <template slot="title">
+                            <i :class="item.iconCls"></i>{{item.name}}</template>
+                        <el-menu-item v-for="child in item.children" :key="child.path" :index="child.path">{{child.name}}</el-menu-item>
+                    </el-submenu>
                 </el-menu>
             </aside>
             <section>
                 <router-view></router-view>
-            </section> 
+            </section>
         </div>
     
     </div>
@@ -34,40 +28,62 @@ module.exports = {
     name: "Home",
     data() {
         return {
-            activeIndex: 'article'
+            
         }
     }
 }
 </script>
 
-<style scoped>
-#home {
+<style >
+html,
+body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
-aside{
-    flex:0 0 18%;
-	width: 230px; 
-}
-
-section{
-    flex:1;
-}
-
-.container{
- 
+.container {
     bottom: 0px;
-	width: 100%;
+    width: 100%;
     height: 100%;
-}
-.main{
+    overflow: hidden;
     display: flex;
-    
+    flex-direction: column;
 }
-.logo {
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+   
+}
+
+aside {
+    flex: 0 0 250px;
+    width: 230px;
+}
+
+section {
+    width: 500px;
+    flex: 1 1 auto;
+    background-color: black;
+}
+
+header {
+    line-height: 60px;
+    padding: 0 40px;
+    font-size: 1.2em;
     height: 60px;
+    color: white;
+    background-color: rgb(55, 65, 85);
 }
 
+.logo {
 
+    font-family: consolas;
+}
+
+.saying {
+    font-size: 0.8em;
+}
 </style>
