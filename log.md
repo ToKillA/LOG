@@ -20,3 +20,13 @@ template 只能包含一个子标签 v-for :key
  </el-card>
  ```
  出现滑动条,，但是不能滑动，好像是改了哪里的flex就莫名能滑动了，但好像改的地方无关联，玄学:(
+
+### 2017/7/7
+webpack.dev.config.js(开发) webpack.prod.config.js(生产) 
+Representational State Transfer（表现层状态转移）CRUD 增删改查 就是用URL定位资源，用HTTP描述操作
+[RESTful定义](http://baike.baidu.com/link?url=zbhZv7ahtxmgc1EZXbjdMCYC21ynMf8Cedv-TEJqejyjzDBywfXyQYc3jl4pntlqa0_6BAryU9k874IJwi2azq)
+[RESTful解释](https://www.zhihu.com/question/28557115)
+[理解RESTful博文](http://www.ruanyifeng.com/blog/2011/09/restful)
+Server提供的RESTful API中，URL中只使用名词来指定资源，原则上不使用动词
+有状态 登录->进入办公->进入薪资查询->输入密码->看到工资
+无状态更容易使客户端获得服务器资源 salary/4
